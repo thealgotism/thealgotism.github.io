@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      font-size: 20px; /* Slightly increased font size */
+      font-size: 20px;
     }
     nav {
       background-color: #333;
@@ -21,8 +21,8 @@
       display: inline-block;
       color: white;
       text-decoration: none;
-      padding: 17.5px 25px; /* Slightly increased padding */
-      font-size: 20px; /* Slightly increased font size */
+      padding: 17.5px 25px;
+      font-size: 20px;
     }
     nav a:hover {
       background-color: #575757;
@@ -30,137 +30,36 @@
     nav a.active-tab {
       background-color: #575757;
     }
-    .content {
-      display: none;
-      padding: 25px; /* Slightly increased padding */
-    }
-    .active {
-      display: block;
-    }
-    /* Intro section styling for Home */
     .intro {
-      border-top: 2.5px solid black; /* Slightly increased border thickness */
-      border-bottom: 2.5px solid black; /* Slightly increased border thickness */
+      border-top: 2.5px solid black;
+      border-bottom: 2.5px solid black;
       background-color: #f0f0f0;
-      padding: 18.75px; /* Slightly increased padding */
-      margin: 25px auto; /* Slightly increased margin */
-      width: 85%; /* Slightly increased width */
+      padding: 18.75px;
+      margin: 25px auto;
+      width: 85%;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .intro:hover {
       transform: scale(1.02);
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Slightly increased shadow */
-    }
-    /* Blog post styling */
-    .blog-post {
-      display: flex;
-      align-items: flex-start;
-      margin: 25px auto; /* Slightly increased margin */
-      padding: 12.5px; /* Slightly increased padding */
-      width: 85%; /* Slightly increased width */
-      background-color: #f0f0f0;
-      border: 1.25px solid #ddd; /* Slightly increased border thickness */
-      border-radius: 6.25px; /* Slightly increased border radius */
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-    }
-    .blog-post:hover {
-      transform: scale(1.02);
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Slightly increased shadow */
-    }
-    .blog-image {
-      width: 187.5px; /* Slightly increased width */
-      height: 187.5px; /* Slightly increased height */
-      object-fit: cover;
-      margin-right: 18.75px; /* Slightly increased margin */
-    }
-    .blog-snippet {
-      text-align: left;
-    }
-    .blog-snippet h2 {
-      margin-top: 0;
-      font-size: 30px; /* Slightly increased font size */
-    }
-    .read-more {
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 20px; /* Slightly increased font size */
-    }
-    .read-more:hover {
-      text-decoration: underline;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
   </style>
-  <script>
-    function showTab(tabId) {
-      // Update URL hash
-      window.location.hash = tabId;
-      // Show the corresponding content
-      document.querySelectorAll('.content').forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      // Update active tab styling
-      document.querySelectorAll('nav a').forEach(link => {
-        link.classList.remove('active-tab');
-        if (link.dataset.tab === tabId) link.classList.add('active-tab');
-      });
-    }
-
-    function handleLoad() {
-      const tabId = window.location.hash.substring(1) || 'home';
-      showTab(tabId);
-    }
-  </script>
 </head>
-<body onload="handleLoad()">
+<body>
   <nav>
-    <a href="#" onclick="showTab('home'); return false;" data-tab="home">Home</a>
-    <a href="#" onclick="showTab('blog'); return false;" data-tab="blog">Blog</a>
-    <a href="#" onclick="showTab('about'); return false;" data-tab="about">About</a>
-    <a href="#" onclick="showTab('tutoring'); return false;" data-tab="tutoring">Tutoring</a>
-    <a href="#" onclick="showTab('work'); return false;" data-tab="work">Work For Us</a>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="tutoring.html">Tutoring</a>
+    <a href="work.html">Work For Us</a>
   </nav>
 
-  <div id="home" class="content active">
-    <!-- Introductory block -->
-    <div class="intro">
-      <p>
-        Hi there! Welcome to the AlgoTism - probably the only blog you'll see trying to combine rigorous math and out-of-pocket humor. We’ll be talking about math and computer science topics that are actually pretty complicated - graphs, counting problems (combinatorics), puzzles, brain teasers, and more; except we’ll be analyzing them through my strange sense of humor. “Here’s a fun fact about body counts for you”, “Do all Asians really look the same?”, “Let’s talk about circle jerks” are some ways articles on this website start. And believe me, I somehow manage to sneak pretty technically challenging concepts into something that starts off like that. Don’t believe me? Check out some of my articles (at your own risk). If this obnoxious sense of humor isn’t your thing (which seriously, for most people it isn’t and that’s obviously okay!), I also have a clean version of this blog. The content there is still engaging, and I still have the same aim - show the “real-lifeness” in math, and keep you engaged that way. I believe math can be fun if you teach it right, and I really want to convince you of this.
-      </p>
-    </div>
-    <h1>Home</h1>
-    <p>Welcome to the homepage!</p>
+  <div class="intro">
+    <p>
+      Hi there! Welcome to the AlgoTism - probably the only blog you'll see trying to combine rigorous math and out-of-pocket humor. We’ll be talking about math and computer science topics that are actually pretty complicated - graphs, counting problems (combinatorics), puzzles, brain teasers, and more; except we’ll be analyzing them through my strange sense of humor. “Here’s a fun fact about body counts for you”, “Do all Asians really look the same?”, “Let’s talk about circle jerks” are some ways articles on this website start. And believe me, I somehow manage to sneak pretty technically challenging concepts into something that starts off like that. Don’t believe me? Check out some of my articles (at your own risk). If this obnoxious sense of humor isn’t your thing (which seriously, for most people it isn’t and that’s obviously okay!), I also have a clean version of this blog. The content there is still engaging, and I still have the same aim - show the “real-lifeness” in math, and keep you engaged that way. I believe math can be fun if you teach it right, and I really want to convince you of this.
+    </p>
   </div>
-  
-  <div id="blog" class="content">
-    <h1>Blog</h1>
-    <!-- New Blog Post Entry -->
-    <div class="blog-post" onclick="location.href='Posts/Handshaking/handshaking.html'">
-      <img src="Posts/Handshaking/images/handshaking.jpg" alt="The Handshaking Lemma" class="blog-image" />
-      <div class="blog-snippet">
-        <h2>The Handshaking Lemma (Body Count Theorem)</h2>
-        <p>
-          Here's a fun little fact for you: if you added the body counts of every human that ever existed, you would ... 
-          <a href="Posts/Handshaking/handshaking.html" class="read-more" onclick="event.stopPropagation();">Read More</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="about" class="content">
-    <h1>About</h1>
-    <p>Learn more about us.</p>
-  </div>
-  
-  <div id="tutoring" class="content">
-    <h1>Tutoring</h1>
-    <p>Explore our tutoring services.</p>
-  </div>
-  
-  <div id="work" class="content">
-    <h1>Work For Us</h1>
-    <p>Join our team!</p>
-  </div>
+  <h1>Home</h1>
+  <p>Welcome to the homepage!</p>
 </body>
 </html>
