@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derangements in Combinatorics (Circle Jerk Problem)</title>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <!-- MathJax library for rendering math notation -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: 'STIX Two Math', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9; /* Light background for better contrast */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 17.5px 25px; /* Slightly increased padding */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    nav a.active-tab {
+      background-color: #575757;
+    }
+    .content {
+      padding: 25px 25px; /* Slightly increased padding */
+      max-width: 1000px; /* Slightly increased max-width */
+      margin: 50px auto; /* Slightly increased margin */
+      text-align: left; /* Align text to the left for better readability */
+      background-color: white; /* White background for the content */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow */
+      border-radius: 10px; /* Slightly increased border radius */
+    }
+    h1 {
+      margin-top: 0; /* Remove top margin for the heading */
+      font-size: 40px; /* Slightly increased font size */
+    }
+    p {
+      line-height: 1.7; /* Slightly increased line spacing */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    ul {
+      font-size: 20px; /* Slightly increased font size */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html" class="active-tab">Blog</a>
+    <a href="about.html">About</a>
+    <a href="tutoring.html">Tutoring</a>
+    <a href="index.html#work">Work For Us</a>
+  </nav>
+  <div class="content">
+    <h1>Derangements in Combinatorics (Circle Jerk Problem)</h1>
+    <p>One of the most pertinent questions about life is: how do I make this tiny life of mine, \( 4000 \) weeks on average, the most meaningful experience possible in that short of a time? Another is, how many ways can \( 10 \) bored boys circle jerk each other on a Saturday afternoon? I’m not qualified by any means to answer the first, so let’s take a shot at the second together.</p>
+
+    <p>Because this is math, we need to rigorously define what a circle jerk is. So here you go: A circle jerk of \( n \) people is a formation in which each person in the group is taking care of someone other than themselves, in such a way that everyone is taken care of. Put in simpler language, everybody needs to contribute to society, and everyone (only within the confines of this circle jerk) deserves pleasure. How many such arrangements are there?</p>
+
+    <p>This is actually a pretty hard problem because of the constraints mentioned above. A good problem solving approach in general is to start with very small examples, see if a pattern emerges, and then try to work with that pattern. So let’s start by looking at the smaller circle jerks. Quick note about notation: \( D_n \) is the number of ways for \( n \) boys to form a circle jerk. If you don’t understand why I chose the letter \( D \) (and why I chose big \( D \), not small \( d \)), then I also have a clean version of this blog linked here, with equally engaging explanations but modified to be PG-13.</p>
+
+    <h3>1 person:</h3>
+    <p>Within our constraints, a loner actually can’t form a circle jerk - since you are not allowed to touch yourself. So \( D_1 = 0 \).</p>
+
+    <h3>2 people:</h3>
+    <p>If Ignacius and Bartholomow only have each other as friends (because who else would befriend someone with those names) then there’s only one way to form a circle jerk: they jerk each other off. So \( D_2 = 1 \).</p>
+
+    <h3>3 people:</h3>
+    <p>Say Jamal, Tyrone, and Daquavius want to form a circle jerk. Now say Jamal does Tyrone. We can’t have Tyrone do Jamal back, because then Daquavius will have to take care of himself, and remember, we are inclusive circle jerkers here! So if Tyrone can’t do Jamal, and he can’t do himself, he has to do Daquavius. And then if we reason a bit, Daquavius has to do Jamal, since, well, someone’s got to. So actually, once we decide Jamal does Tyrone the rest of the circle decides itself. Now, we can think of another circle where Tyrone does Jamal, and the rest of the circle decides itself with the same logic as above. These are the only two circle jerks of \( 3 \) people (it’s sad that there aren’t more ways, but hey, at least we’re forming circles now!). Anyways, this means \( D_3 = 2 \).</p>
+
+    <h3>4 people:</h3>
+    <p>Here’s where things get more interesting. Mathematically interesting, pervert.</p>
+
+    <p>The first way we can count it is the summation formula: First count everything, then exclude \( 1 \) person doing themselves, add back \( 2 \) people, subtract \( 3 \) people, add back \( 4 \) people, and so on. Are there more recursive ways to figure this out? This formula is huge.</p>
+
+    <p>The second recursive relationship works like this: say there are \( n \) people in a circle jerk right now, and I want to join in. I can replace any person as follows: See who they are jerking off, remove their hand from there and put it on myself, and then I can jerk off whoever they were jerking off. We’ll call this “entrance by insertion”. The other thing I can do is pick a person I would like to be especially intimate with, and do the following: interrupt everyone’s time of their lives, tell them I want this one guy (we’ll call him Jeremy) all to myself: I jerk Jeremy off and he jerks me off. The rest can do whatever the hell they want. Now, there’s \( D_{n-1} \) ways those folks can jerk themselves off, and there’s \( n \) people I can choose to be intimate with. In the other case, there are \( n \) people in the circle jerk, so \( n \) hands I can place on myself. Once I put a hand on myself, I have to put my hand only where I removed the other from - otherwise poor Barry will be without pleasure. Therefore, this recursive relationship makes sense.</p>
+
+    <p>The less intuitive one is this: Why is \( D_{n+1} = n \times D_n - (-1)^n \)?  What’s going on with that? What are my \( n \) secret options for joining a circle jerk with \( n \) people? Why is one magically getting added or deleted? Trust me, this isn’t intuitive at all, and took me more than \( 4 \) days thinking about circle jerks to figure out why the hell this was happening, but I finally got it.</p>
+
+    <p>Here’s a really interesting fact - the ratio of     wank configurations to inclusive circle jerks doesn’t change much as the number of people gets really large.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derangements in Combinatorics (Circle Jerk Problem)</title>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <!-- MathJax library for rendering math notation -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: 'STIX Two Math', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9; /* Light background for better contrast */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 17.5px 25px; /* Slightly increased padding */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    nav a.active-tab {
+      background-color: #575757;
+    }
+    .content {
+      padding: 25px 25px; /* Slightly increased padding */
+      max-width: 1000px; /* Slightly increased max-width */
+      margin: 50px auto; /* Slightly increased margin */
+      text-align: left; /* Align text to the left for better readability */
+      background-color: white; /* White background for the content */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow */
+      border-radius: 10px; /* Slightly increased border radius */
+    }
+    h1 {
+      margin-top: 0; /* Remove top margin for the heading */
+      font-size: 40px; /* Slightly increased font size */
+    }
+    p {
+      line-height: 1.7; /* Slightly increased line spacing */
+      font-size: 20px; /* Slightly increased font size */
+    }
+    ul {
+      font-size: 20px; /* Slightly increased font size */
+    }
+    .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%; /* Adjust width as a percentage */
+            height: auto; /* Keeps the aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html" class="active-tab">Blog</a>
+    <a href="about.html">About</a>
+    <a href="tutoring.html">Tutoring</a>
+    <a href="index.html#work">Work For Us</a>
+  </nav>
+  <div class="content">
+    <h1>Derangements in Combinatorics (Circle Jerk Problem)</h1>
+    <p>I don’t know how your friendships are, but a lot of mine thrive on hitting each other. Seriously, nothing makes me feel more loved than a (well-intentioned) bonk across the head. If you’re anything like me, here’s a game you can play with your friends: you sit on opposite sides of the table and put 5 chairs on each side of the table. You sit on one side, your friend sits on another. So it should look like this:</p>
+
+    <img src="handshaking.jpg" alt="Table with chairs" class="center-image"/>
+
+    <p>Now here are the rules: one of you is the abuser, the other is the victim, you sit on opposite sides of the table. You also need to have a victim to keep the abuser in check (hey, even as an abuser you have to play by the rules. You know that rule in a street fight that you never go for a man’s balls? Same shit). The abuser is blindfolded. Here are the rules:</p>
+
+    <p>The abuser holds something with which they will try to hit the other person over the head. Please, please, if you actually play this game, use something soft. A foam noodle is probably your best bet. Anyways, here’s how the game starts: the abuser is blindfolded, and the victim isn’t. The abuser is allowed to pick whichever seat they want, after which the victim is allowed to choose (and they get to pick this after seeing where the abuser goes). Now, the abuser strikes his weapon to the chair right in front – he is only allowed to strike straight in front of him. After each strike, the victim must move to an adjacent chair. The abuser doesn’t know which chair the victim has moved to, but they know that the victim has moved to an adjacent chair. The abuser can move to whichever chair they want.</p>
+
+    <p>The question is, is there a strategy the abuser can follow to successfully abuse the victim every time?</p>
+
+    <p>Take a moment to think about this. If you want, play it with someone. It takes a second to set up, but it’s actually a lot of fun.</p>
+
+    <p>Put yourself in the shoes of the abuser and realize this: if you get the victim on chair 1 or chair 5, they have only one choice. They can only move to an adjacent chair, which is chair 4. You, on the other hand, can move wherever you want (or not move if you don’t want to). So, at some point, if you realize the victim is at chair 1, then you can strike chair 2 in your next hit and you will get the victim for sure. So our goal is to get the victim into chair 1 and then we can beat the shit out of him. Let’s do this:</p>
+
+    <p>First strategy: slowly corner him into chair 1. We do it like this. On your first turn, strike chair 4. Unless your victim is an absolute idiot, he’s not on chair 4. He’s either on 1, 2, 3, or 5. Now, if...</p>
+
+</div>
+</body>
+</html>
