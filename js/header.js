@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </button>
         <ul class="nav-links">
           <li><a href="index.html"${path === 'index.html' ? ' class="active-tab"' : ''}>Home</a></li>
-          <li><a href="blog.html"${path === 'blog.html' ? ' class="active-tab"' : ''}>Blog</a></li>
+          <li><a href="blog.html"${['blog.html', 'handshaking.html'].includes(path) ? ' class="active-tab"' : ''}>Blog</a></li>
           <li><a href="learning-philosophy.html"${path === 'learning-philosophy.html' ? ' class="active-tab"' : ''}>Learning Philosophy</a></li>
           <li><a href="tutoring.html"${path === 'tutoring.html' ? ' class="active-tab"' : ''}>Tutoring</a></li>
         </ul>
@@ -33,4 +33,4 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.remove('active');
       }
     });
-  });
+});
