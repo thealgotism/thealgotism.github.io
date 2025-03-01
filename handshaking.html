@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Handshaking Lemma (Body Count Theorem)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Handshaking Lemma</title>
   <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
-  <!-- MathJax library for rendering math notation -->
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/header.js" defer></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-    body {
-      font-family: 'STIX Two Math', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f9f9f9; /* Light background for better contrast */
-      font-size: 20px; /* Slightly increased font size */
+    .content p {
+      line-height: 1.7;
+      margin: 1.5em 0;
     }
-    nav {
-      background-color: #333;
-      overflow: hidden;
-    }
-    nav a {
-      display: inline-block;
-      color: white;
-      text-decoration: none;
-      padding: 17.5px 25px; /* Slightly increased padding */
-      font-size: 20px; /* Slightly increased font size */
-    }
-    nav a:hover {
-      background-color: #575757;
-    }
-    nav a.active-tab {
-      background-color: #575757;
-    }
-    .content {
-      padding: 25px 25px; /* Slightly increased padding */
-      max-width: 1000px; /* Slightly increased max-width */
-      margin: 50px auto; /* Slightly increased margin */
-      text-align: left; /* Align text to the left for better readability */
-      background-color: white; /* White background for the content */
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow */
-      border-radius: 10px; /* Slightly increased border radius */
-    }
-    h1 {
-      margin-top: 0; /* Remove top margin for the heading */
-      font-size: 40px; /* Slightly increased font size */
-    }
-    p {
-      line-height: 1.7; /* Slightly increased line spacing */
-      font-size: 20px; /* Slightly increased font size */
-    }
-    ul {
-      font-size: 20px; /* Slightly increased font size */
+    .content ul {
+      margin: 1.5em 0;
+      padding-left: 2em;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html" class="active-tab">Blog</a>
-    <a href="about.html">About</a>
-    <a href="tutoring.html">Tutoring</a>
-    <a href="index.html#work">Work For Us</a>
-  </nav>
   <div class="content">
     <h1>The Handshaking Lemma (Body Count Theorem)</h1>
-    <p>Here's a fun little fact for you: if you decided to add up the body counts of every human that ever existed, you would get an even number. Take a minute to think about why that might be.</p>
+    
+    <p>Fun fact: if you added up the body counts of every human to ever exist, you would get an even number. Take a minute to think about why that might be.</p>
 
-    <p>The reasoning goes: let's go back in time to before the first sexual encounter ever happened. Say some creep decided to keep track of the sum of everyone's body count (don't ask). For some reason he doesn't care about everyone's individual body counts, just the sum of them. Somehow, this weirdo figures out every time two people have sex (again, don't ask). And every time two people have sex, one of two things happens. Either they've already had sex before, in which case no one's body count increases. If this is their first sexual encounter, then it increases both of their individual body counts by \(1\), which means the sum of everyone's body counts has increased by \(2\).</p>
+    <p>The reasoning goes: let’s time travel back to when no one had had sex yet. Say some creep decided to keep track of the sum of everyone's body count (don't ask). He doesn't care about anyone's individual body count, just their sum. This weirdo somehow figures out every time two people have sex (again, don't ask). And every time two people have sex, either they've already had sex before, in which case no one's body count increases, or this is their first sexual encounter, so both of their individual body counts go up by \(1\), causing the sum of everyone’s body counts to increase by \(2\). If the sum starts at \(0\), and only increases by \(2\) every time something happens, then the sum starts off even and remains even forever.</p>
 
-    <p>If I still haven't managed to convince you (or if you’re enjoying reading about body counts), let me walk you through a small example. Consider the first guy gang ever, we'll call them Bartholomew, Jamal, Daquavius and Ramalingam. Let's go through who does it with whom and how that affects the sum of everyone's body counts. Before anyone does anything, the sum is \(0\). Let's say Bartholomew, despite the unmoanable name, manages to take Jamal home. This adds \(1\) to both of their body counts, since Bartholomew (who told Jamal to just moan Barry) now has a body count of \(1\), and so does Jamal. Everyone else has \(0\). The sum of everyone's body counts is \(2\) as of now. Now, Jamal, being the absolute player he is, does it with both Daquavius and Ramalingam on the same night. How does this affect our sum? Jamal's body count went by \(2\) that night (whore!), while both Ramalingam's and Daquavius' body count went up by \(1\) respectively. Therefore, the sum of everyone's body counts increases by \(2 + 1 + 1 = 4\). Now, say Jamal misses the tenderness with which Bartholomew took his virginity and decides to go back to him. This doesn't improve (or make worse, depending on how you see it) anyone's body counts - they are both sleeping with someone they've already slept with. So we are still at Jamal - \(3\), Daquavius - \(1\), Barry - \(1\), Ramalingam - \(1\), and our sum is \(6\), which is still even. Now, how many ever new people join this incestuous guy gang of theirs, every time two of them have sex, either:</p>
+    <p>Now, before one of you smartasses asks, this theorem is robust to threesomes, foursomes, orgies, the whole deal. What happens in a threesome? Well, if it’s between three people who’ve never done it with each other before, then each person is doing it with \(2\) new people that night, so each of their body counts increases by \(2\), meaning the total sum increases by \(6\). What if two of them are a hetero couple who’ve done it before, and the guy decides to add his overly clingy girl bestie to the mix? In that case, only the girlfriend’s and the girl best friend’s body counts increase, so the sum increases by \(2\). (Incase you missed the joke there - \(1\). The guy has cheated on his girlfriend with his clingy girl bestie, \(2\). Get the fuck off my blog).</p>
+
+    <p>If you still aren’t convinced, let’s work through a small example. Consider the first guy gang to ever exist. This gang consists of \(4\) members: Ben Dover, Ignacius, Chris. P. Bacon, and Jamal.</p>
+
+    <p>Let's go through who does it with whom and how that affects the sum of everyone's body counts. The sum starts off at \(0\). Let's say Ignacius takes Jamal home. This adds \(1\) to both of their body counts, so we have: Ignacius - \(1\), Jamal -\(1\). Everyone else has a body count of \(0\). The sum of everyone's body counts is \(2\) as of now. Now, Jamal does it with both Ben and Chris on the same night. How does this affect the sum? Jamal's body count went up by \(2\) that night (whore!), while both Chris's and Ben' body count went up by \(1\) each. Therefore, the sum of everyone's body counts increases by \(2 + 1 + 1 = 4\). Now, say Jamal sleeps with Ignacius again - this doesn't improve anyone's body count; they’ve already slept with each other. So we are still at Jamal - \(3\), Ignacius - \(1\), Ben - \(1\), Chris- \(1\), and our sum is \(6\), which is still even. How many ever new people join this incestuous guy gang of theirs, every time two of them have sex, either:</p>
 
     <ul>
       <li>They've done it before, in which case no one's body count is affected, so neither is the sum</li>
@@ -81,11 +41,11 @@
 
     <p>If the sum only ever goes up by \(2\) or stays the same, then the sum is always an even number!</p>
 
-    <p>Here is a cleaner version of this theorem, after which I'll give you a more formal statement for it: Say you decide to crash a party and go around asking everyone, “Of all the people at this party right now, how many have you shaken hands with?”. Assuming everyone is sober enough to answer correctly, if you sum up everyone’s answers, you’ll get an even number. What you won’t get is invited to party with those people again, because who the fuck goes around asking people that?</p>
+    <p>Here is a cleaner version of this theorem (and why this theorem is the Handshaking Lemma, not Body Count Theorem): say you decide to crash a party and go around asking everyone, “Of all the people at this party right now, how many have you shaken hands with?”. Assuming everyone is sober enough to remember correctly, if you add up everyone’s answers, you’ll get an even number. What you won’t get is invited to party with those people again, because who the fuck goes around asking that?</p>
 
-    <p>The reason you get an even number is because every time a handshake took place, it involved two people. Every handshake caused exactly two people’s answer to your question to be one more than it otherwise would have. And so every handshake adds \(2\) to the sum, and your answer is even.</p>
+    <p>The reason you get an even number is because every time a handshake took place, it involved two people. It increased two people’s “handshake count” by \(1\), so increased the sum by \(2\). And so your sum is even.</p>
 
-    <p>The very formal statement in graph theory is: In any finite undirected graph, the sum of the degrees of all vertices is equal to twice the number of edges. If you don’t know what a graph is in computer science, you can go fuck yourself. Alternatively, you can read this article(to be linked in the future) where I explain it for you. But the idea is, each edge adds \(1\) to the degree of two vertices, and so the sum of the degrees of every vertex is twice the number of edges.</p>
+    <p>The very formal statement in graph theory is: In any finite undirected graph, the sum of the degrees of all vertices is equal to \(2\) times the number of edges. This is because each edge adds \(1\) to the degree of two different vertices.</p>
   </div>
 </body>
 </html>
