@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markov Chains</title>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/header.js" defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .content p {
+      line-height: 1.7;
+      margin: 1.5em 0;
+    }
+    .content ul {
+      margin: 1.5em 0;
+      padding-left: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>The Handshaking Lemma (Body Count Theorem)</h1>
+    
+    <p>Fun fact: if you added up the body counts of every human to ever exist, you would get an even number. Take a minute to think about why that might be.</p>
+
+    <p>The reasoning goes: let’s time travel back to when no one had had sex yet. Say some creep decided to keep track of the sum of everyone's body count (don't ask). He doesn't care about anyone's individual body count, just their sum. This weirdo somehow figures out every time two people have sex (again, don't ask). And every time two people have sex, either they've already had sex before, in which case no one's body count increases, or this is their first sexual encounter, so both of their individual body counts go up by \(1\), causing the sum of everyone’s body counts to increase by \(2\). If the sum starts at \(0\), and only increases by \(2\) every time something happens, then the sum starts off even and remains even forever.</p>
+
+    <p>Now, before one of you smartasses asks, this theorem is robust to threesomes, foursomes, orgies, the whole deal. What happens in a threesome? Well, if it’s between three people who’ve never done it with each other before, then each person is doing it with \(2\) new people that night, so each of their body counts increases by \(2\), meaning the total sum increases by \(6\). What if two of them are a hetero couple who’ve done it before, and the guy decides to add his overly clingy girl bestie to the mix? In that case, only the girlfriend’s and the girl best friend’s body counts increase, so the sum increases by \(2\). (Incase you missed the joke there - \(1\). The guy has cheated on his girlfriend with his clingy girl bestie, \(2\). Get the fuck off my blog).</p>
+
+    <p>If you still aren’t convinced, let’s work through a small example. Consider the first guy gang to ever exist. This gang consists of \(4\) members: Ben Dover, Ignacius, Chris. P. Bacon, and Jamal.</p>
+
+    <p>Let's go through who does it with whom and how that affects the sum of everyone's body counts. The sum starts off at \(0\). Let's say Ignacius takes Jamal home. This adds \(1\) to both of their body counts, so we have: Ignacius - \(1\), Jamal -\(1\). Everyone else has a body count of \(0\). The sum of everyone's body counts is \(2\) as of now. Now, Jamal does it with both Ben and Chris on the same night. How does this affect the sum? Jamal's body count went up by \(2\) that night (whore!), while both Chris's and Ben' body count went up by \(1\) each. Therefore, the sum of everyone's body counts increases by \(2 + 1 + 1 = 4\). Now, say Jamal sleeps with Ignacius again - this doesn't improve anyone's body count; they’ve already slept with each other. So we are still at Jamal - \(3\), Ignacius - \(1\), Ben - \(1\), Chris- \(1\), and our sum is \(6\), which is still even. How many ever new people join this incestuous guy gang of theirs, every time two of them have sex, either:</p>
+
+    <ul>
+      <li>They've done it before, in which case no one's body count is affected, so neither is the sum</li>
+      <li>They're exploring each other for the first time (yay!), in which case both their body counts go up by \(1\), so the sum goes up by \(2\).</li>
+    </ul>
+
+    <p>If the sum only ever goes up by \(2\) or stays the same, then the sum is always an even number!</p>
+
+    <p>Here is a cleaner version of this theorem (and why this theorem is the Handshaking Lemma, not Body Count Theorem): say you decide to crash a party and go around asking everyone, “Of all the people at this party right now, how many have you shaken hands with?”. Assuming everyone is sober enough to remember correctly, if you add up everyone’s answers, you’ll get an even number. What you won’t get is invited to party with those people again, because who the fuck goes around asking that?</p>
+
+    <p>The reason you get an even number is because every time a handshake took place, it involved two people. It increased two people’s “handshake count” by \(1\), so increased the sum by \(2\). And so your sum is even.</p>
+
+    <p>The very formal statement in graph theory is: In any finite undirected graph, the sum of the degrees of all vertices is equal to \(2\) times the number of edges. This is because each edge adds \(1\) to the degree of two different vertices.</p>
+  </div>
+</body>
+</html>

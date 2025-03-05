@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.insertAdjacentHTML('afterbegin', `
       <nav>
         <a href="index.html" class="logo-link">
-          <img src="logo.jpg" class="logo" alt="Algotism Logo">
+          <img src="mathhamster.jpg" class="logo" alt="Algotism Logo">
         </a>
         <button class="hamburger" aria-label="Toggle navigation">
           ☰
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <ul class="nav-links">
           <li><a href="index.html"${path === 'index.html' ? ' class="active-tab"' : ''}>Home</a></li>
           <li><a href="blog.html"${['blog.html', 'handshaking.html'].includes(path) ? ' class="active-tab"' : ''}>Blog</a></li>
-          <li><a href="learning-philosophy.html"${path === 'learning-philosophy.html' ? ' class="active-tab"' : ''}>Learning Philosophy</a></li>
+          <li><a href="philosophy.html"${path === 'philosophy.html' ? ' class="active-tab"' : ''}>Our Philosophy</a></li>
           <li><a href="tutoring.html"${path === 'tutoring.html' ? ' class="active-tab"' : ''}>Tutoring</a></li>
         </ul>
       </nav>
