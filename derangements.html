@@ -1,90 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derangements in Combinatorics (Circle Jerk Problem)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Handshaking Lemma</title>
   <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
-  <!-- MathJax library for rendering math notation -->
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/header.js" defer></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-    body {
-      font-family: 'STIX Two Math', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f9f9f9; /* Light background for better contrast */
-      font-size: 20px; /* Slightly increased font size */
+    .content p {
+      line-height: 1.7;
+      margin: 1.5em 0;
     }
-    nav {
-      background-color: #333;
-      overflow: hidden;
-    }
-    nav a {
-      display: inline-block;
-      color: white;
-      text-decoration: none;
-      padding: 17.5px 25px; /* Slightly increased padding */
-      font-size: 20px; /* Slightly increased font size */
-    }
-    nav a:hover {
-      background-color: #575757;
-    }
-    nav a.active-tab {
-      background-color: #575757;
-    }
-    .content {
-      padding: 25px 25px; /* Slightly increased padding */
-      max-width: 1000px; /* Slightly increased max-width */
-      margin: 50px auto; /* Slightly increased margin */
-      text-align: left; /* Align text to the left for better readability */
-      background-color: white; /* White background for the content */
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow */
-      border-radius: 10px; /* Slightly increased border radius */
-    }
-    h1 {
-      margin-top: 0; /* Remove top margin for the heading */
-      font-size: 40px; /* Slightly increased font size */
-    }
-    p {
-      line-height: 1.7; /* Slightly increased line spacing */
-      font-size: 20px; /* Slightly increased font size */
-    }
-    ul {
-      font-size: 20px; /* Slightly increased font size */
+    .content ul {
+      margin: 1.5em 0;
+      padding-left: 2em;
     }
   </style>
 </head>
 <body>
-  <nav>
+  <!-- <nav>
     <a href="index.html">Home</a>
     <a href="blog.html" class="active-tab">Blog</a>
     <a href="about.html">About</a>
     <a href="tutoring.html">Tutoring</a>
     <a href="index.html#work">Work For Us</a>
-  </nav>
+  </nav> -->
   <div class="content">
     <h1>Derangements in Combinatorics (Circle Jerk Problem)</h1>
-    <p>One of the most pertinent questions about life is: how do I make this tiny life of mine, \( 4000 \) weeks on average, the most meaningful experience possible in that short of a time? Another is, how many ways can \( 10 \) bored boys circle jerk each other on a Saturday afternoon? I’m not qualified by any means to answer the first, so let’s take a shot at the second together.</p>
+    <p>One of the most pertinent questions about life is: how do I make this tiny life of mine, 
+        \( 4000 \) weeks on average, as meaningful as possible in that less time? 
+        Another is, how many ways can \( 10 \) boys circle jerk each other? 
+        Since I'm not qualified to answer the first, let’s take a shot at the second.</p>
 
-    <p>Because this is math, we need to rigorously define what a circle jerk is. So here you go: A circle jerk of \( n \) people is a formation in which each person in the group is taking care of someone other than themselves, in such a way that everyone is taken care of. Put in simpler language, everybody needs to contribute to society, and everyone (only within the confines of this circle jerk) deserves pleasure. How many such arrangements are there?</p>
+    <p>First, let's rigorously define what a circle jerk is. A circle jerk of \( n \) individuals is a 
+        formation in which each individual takes on responsibility for the pleasure of someone other than 
+        themselves, such that all individuals are attended to. In simpler language, you aren't allowed to 
+        touch yourself, and you've got to be inclusive of everyone. How many such arrangements are there?</p>
 
-    <p>This is actually a pretty hard problem because of the constraints mentioned above. A good problem solving approach in general is to start with very small examples, see if a pattern emerges, and then try to work with that pattern. So let’s start by looking at the smaller circle jerks. Quick note about notation: \( D_n \) is the number of ways for \( n \) boys to form a circle jerk. If you don’t understand why I chose the letter \( D \) (and why I chose big \( D \), not small \( d \)), then I also have a clean version of this blog linked here, with equally engaging explanations but modified to be PG-13.</p>
+    <p>This is actually a really hard problem because of the constraints mentioned above. And it's not terribly obvious
+        where to start. It might be a good idea to examine smaller circle jerks before thinking about the general case. 
+        So let’s start there. I'll use  \( D_n \) to denote  the number of ways for \( n \) boys to form a circle jerk. 
+        And you'll be surprised later on that the reason I chose the letter \( D \) (and chose the capital letter)
+        isn't what you'd expect from someone who spent 4 hours perfecting a blog post on circle jerks. 
+    </p>
 
     <h3>1 person:</h3>
-    <p>Within our constraints, a loner actually can’t form a circle jerk - since you are not allowed to touch yourself. So \( D_1 = 0 \).</p>
+    <p>Within our constraints, a lonely fuck can’t actually form a circle jerk - since you are not allowed to touch yourself. So \( D_1 = 0 \).</p>
 
     <h3>2 people:</h3>
-    <p>If Ignacius and Bartholomow only have each other as friends (because who else would befriend someone with those names) then there’s only one way to form a circle jerk: they jerk each other off. So \( D_2 = 1 \).</p>
+    <p>If there are two people, their only option is to attend to each other. So \( D_2 = 1 \).</p>
 
     <h3>3 people:</h3>
-    <p>Say Jamal, Tyrone, and Daquavius want to form a circle jerk. Now say Jamal does Tyrone. We can’t have Tyrone do Jamal back, because then Daquavius will have to take care of himself, and remember, we are inclusive circle jerkers here! So if Tyrone can’t do Jamal, and he can’t do himself, he has to do Daquavius. And then if we reason a bit, Daquavius has to do Jamal, since, well, someone’s got to. So actually, once we decide Jamal does Tyrone the rest of the circle decides itself. Now, we can think of another circle where Tyrone does Jamal, and the rest of the circle decides itself with the same logic as above. These are the only two circle jerks of \( 3 \) people (it’s sad that there aren’t more ways, but hey, at least we’re forming circles now!). Anyways, this means \( D_3 = 2 \).</p>
+    <p>If it's me, Chris P. Bacon and Ben Dover, then let's start with me. I have two choices 
+        for who I jerk off. Say I chose Chris. If Chris choses me, then Ben has to do himself, which isn't allowed, 
+        so Chris has to chose Ben. Now, since Ben is the last person remaining, and no one's attending to me yet, 
+        Ben has to pleasure me. How else could this circle jerk have turned out? Well, I could have chosen Ben, 
+        then by similar logic Ben has to chose Chris, Chris has to chose me. There's only two ways for this 
+        to turn out, so \( D_3 = 2 \).</p>
 
     <h3>4 people:</h3>
-    <p>Here’s where things get more interesting. Mathematically interesting, pervert.</p>
+    <p>Here’s where things get more interesting. Mathematically speaking, pervert. There are two "shapes" in which 
+        \( 4 \) people can configure themselves, as illustrated by the shitty drawing below:
+    </p>
+    <img src="images/fourpeople.jpg" alt="Four People" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+
+    <p></p>
+
 
     <p>The first way we can count it is the summation formula: First count everything, then exclude \( 1 \) person doing themselves, add back \( 2 \) people, subtract \( 3 \) people, add back \( 4 \) people, and so on. Are there more recursive ways to figure this out? This formula is huge.</p>
 
